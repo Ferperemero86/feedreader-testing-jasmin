@@ -71,7 +71,6 @@ $(function() {
 
        });
 
-   }());
 
 
     /* TODO: Write a new test suite named "The menu" */
@@ -88,10 +87,10 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
 
-    $(function() {
+
 
        describe('The Menu', function() {
-          var body = document.getElementsByTagName('body')[0];
+
           var menuClass = document.getElementsByClassName('menu-hidden')[0].getAttribute('class');
 
           it('check if menu is hidden', function() {
@@ -111,7 +110,7 @@ $(function() {
 
 
 
-    }());
+
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -122,9 +121,31 @@ $(function() {
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
 
+
+   describe('Initial Entries', function() {
+
+     beforeEach(function(done) {
+       loadFeed(0,done);
+     });
+
+      it('check entry element in  feed container', function (done) {
+         var entries = document.getElementsByClassName('entry-link');
+         expect(entries.length).toBeGreaterThan(0);
+         done();
+
+      });
+
+
+    });
+
+
+
     /* TODO: Write a new test suite named "New Feed Selection" */
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+
+}());
