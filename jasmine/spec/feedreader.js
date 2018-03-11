@@ -27,6 +27,8 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
+    });
+
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
@@ -52,7 +54,22 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-    });
+
+      describe('names test', function() {
+
+          function testNames(i) {
+            it('names defined in allFeeds',function() {
+              expect(allFeeds[i].name).toBeDefined();
+              expect(allFeeds[i].name).not.toBe('');
+
+            });
+          }
+
+          for( var i = 0; i < allFeeds.length; i++) {
+                testNames(i);
+          }
+
+       });
 
 
     /* TODO: Write a new test suite named "The menu" */
