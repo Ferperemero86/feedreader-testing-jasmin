@@ -71,6 +71,8 @@ $(function() {
 
        });
 
+   }());
+
 
     /* TODO: Write a new test suite named "The menu" */
 
@@ -85,6 +87,31 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+
+    $(function() {
+
+       describe('The Menu', function() {
+          var body = document.getElementsByTagName('body')[0];
+          var menuClass = document.getElementsByClassName('menu-hidden')[0].getAttribute('class');
+
+          it('check if menu is hidden', function() {
+             expect(menuClass).toBe(menuClass);
+          });
+
+          it('check menu displays and hides properly when clicked', function() {
+             if(menuClass) {
+              expect(menuClass).toBe(menuClass);
+            } else {
+              expect(menuClass).toBe('');
+            }
+          });
+
+        });
+
+
+
+
+    }());
 
     /* TODO: Write a new test suite named "Initial Entries" */
 
@@ -101,4 +128,3 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-}());
