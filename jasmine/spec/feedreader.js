@@ -148,7 +148,7 @@ $(function() {
          */
 
     describe('New Feed Selection', function() {
-        var entries = document.getElementsByClassName('entry-link');
+       
         var previousUrl;
         var newUrl;
 
