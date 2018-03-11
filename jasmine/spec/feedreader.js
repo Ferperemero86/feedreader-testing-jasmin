@@ -22,7 +22,7 @@ $(function() {
          * page?
          */
 
-        it('are defined', function() {
+        it('Are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(0);
         });
@@ -38,7 +38,7 @@ $(function() {
     describe('urls test', function() {
 
         function testUrls(i) {
-          it('url defined in allFeeds',function() {
+          it('Url defined in allFeeds',function() {
              expect(allFeeds[i].url).toBeDefined();
           });
        }
@@ -55,7 +55,7 @@ $(function() {
          * and that the name is not empty.
          */
 
-      describe('names test', function() {
+      describe('Names test', function() {
 
           function testNames(i) {
             it('names defined in allFeeds',function() {
@@ -93,11 +93,11 @@ $(function() {
 
           var menuClass = document.getElementsByClassName('menu-hidden')[0].getAttribute('class');
 
-          it('check if menu is hidden', function() {
+          it('Check if menu is hidden', function() {
              expect(menuClass).toBe(menuClass);
           });
 
-          it('check menu displays and hides properly when clicked', function() {
+          it('Check menu displays and hides properly when clicked', function() {
              if(menuClass) {
               expect(menuClass).toBe(menuClass);
             } else {
@@ -128,7 +128,7 @@ $(function() {
        loadFeed(0,done);
      });
 
-      it('check entry element in  feed container', function (done) {
+      it('Check entry element in  feed container', function (done) {
          var entries = document.getElementsByClassName('entry-link');
          expect(entries.length).toBeGreaterThan(0);
          done();
@@ -146,6 +146,25 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+
+    describe('New Feed Selection', function() {
+        var entries = document.getElementsByClassName('entry-link');
+        var previousUrl;
+        var newUrl;
+
+
+        beforeEach(function(done) {
+           previousUrl = $('.entry-link').attr('href');
+           loadFeed(1,done);
+        });
+
+        it('Feed content changes when loading a new feed', function (done) {
+           previousUrl = $('.entry-link').attr('href');
+           expect(newUrl).not.toBe(previousUrl);
+           done();
+        });
+
+     });
 
 
 }());
