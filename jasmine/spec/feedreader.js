@@ -84,15 +84,15 @@ $(function() {
           // Make sure the menu is hidden initially
 
           it('Menu is hidden', function() {
-             expect($('body').attr('class')).toBe('menu-hidden');
+             expect($('body').hasClass('menu-hidden')).toBe(true);
           });
 
           it('body toggles the class menu-hidden on clicking menu icon', function() {
              $('.menu-icon-link').click();
-             expect($('body').attr('class')).not.toContain('menu-hidden');
+             expect($('body').hasClass('menu-hidden')).toBe(false);
 
              $('.menu-icon-link').click();
-             expect($('body').attr('class')).toContain('menu-hidden');
+             expect($('body').hasClass('menu-hidden')).toBe(true);
           });
 
        });
@@ -105,14 +105,14 @@ $(function() {
      */
 
 
-      describe('Initial Entries', function() {
+       describe('Initial Entries', function() {
 
         beforeEach(function(done) {
         loadFeed(0,done);
         });
 
         it('Check entry element in  feed container', function (done) {
-           var entries = $('.feed .entry-link');
+           var entries = $('.feed .entry');
            expect(entries.length).toBeGreaterThan(0);
            done();
        });
@@ -128,10 +128,11 @@ $(function() {
        */
 
       describe('New Feed Selection', function() {
-        var firstFeedSelection = $('.feed').html();
+        var firstFeedSelection;
 
          beforeEach(function(done) {
            loadFeed(0,function() {
+              firstFeedSelection = $('.feed').html();
 
              loadFeed(1,function() {
                done();
