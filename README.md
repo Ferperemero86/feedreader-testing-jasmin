@@ -19,6 +19,19 @@ and that the URL is not empty. */ it('has an URL defined and the URL is not empt
 Installation
 To run the script please just visit this link: https://github.com/Ferperemero86/feedreader-testing-jasmin
 
+How to run the this locally
+Option-1 - Simple:
+	•	Click "Clone in Desktop" / "Download ZIP"
+	•	Open the folder
+	•	Open index.html on your preferred browser
+	•	There should be several test results at the bottom of the screen that says "~ specs, ~ failures"
+Option-2 Using Terminal and Node.js:
+	•	Pre-requisite : Install node.js, npm, and git
+	•	Clone this repo. Open your terminal and run git clone git@github.com:yhagio/udacity-feedreader-test.git
+	•	Install http-server by npm install -g http-server
+	•	Then run http-server in terminal inside the root of the cloned repo.
+	•	Go to the URL http://localhost:8080/ in browser.
+
 
 
 What I did in detail for the Udacity Project
